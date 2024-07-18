@@ -1,0 +1,149 @@
+footer {
+   background-color: #30a8f8;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 20px;
+
+   .logo {
+      a {
+         font-family: "Righteous", sans-serif;
+         color: white;
+         font-size: 2.5rem;
+
+      }
+   }
+
+
+
+   a {
+      color: white;
+      text-decoration: none;
+      font-family: "Rubik", sans-serif;
+      padding: 0 20px;
+      font-size: 1.2rem;
+   }
+}
+
+.post_footer {
+   font-family: "Rubik", sans-serif;
+   text-align: center;
+   background-color: #30a8f8;
+   color: white;
+   padding: 50px;
+}
+
+.modal {
+   position: fixed;
+   z-index: 1;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   overflow: auto;
+   background-color: rgb(0, 0, 0);
+   background-color: rgba(0, 0, 0, 0.4);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   h2 {
+      font-family: "Righteous", sans-serif;
+   }
+
+   input,
+   button {
+      font-family: "Rubik", sans-serif;
+      width: 100%;
+      padding: 10px;
+      border-radius: 50px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      border: 0;
+   }
+
+   button {
+      background-color: #30a8f8;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+   }
+}
+
+#sup_msg {
+   font-family: "Rubik", sans-serif;
+   text-align: center;
+}
+
+.s_e {
+   background-color: rgb(255, 142, 142);
+   padding: 10px;
+   border: 3px solid red;
+   border-radius: 5px;
+
+}
+
+.s_s {
+   background-color: rgb(142, 255, 157);
+   padding: 10px;
+   border: 3px solid green;
+   border-radius: 5px;
+}
+
+.modal_content {
+   border-radius: 10px;
+   background-color: #fefefe;
+   margin: 5% auto;
+   padding: 100px;
+   border: 1px solid #888;
+   width: 80%;
+   max-width: 500px;
+   text-align: center;
+
+   position: relative;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   justify-content: center;
+   gap: 20px;
+
+}
+
+.close {
+   color: #aaa;
+   position: absolute;
+   font-size: 28px;
+   font-weight: bold;
+   right: 10px;
+   top: 0px;
+}
+
+.close:hover,
+.close:focus {
+   color: black;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+@media (max-width:1000px) {
+   footer {
+      flex-direction: column;
+
+      nav {
+         margin-top: 50px;
+      }
+   }
+}
+
+@media (max-width:750px) {
+   footer {
+      flex-direction: column;
+
+      nav {
+         display: flex;
+         align-items: center;
+         gap: 20px;
+         flex-direction: column;
+         margin-top: 50px;
+      }
+   }
+}

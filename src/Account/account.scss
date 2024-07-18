@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+.account_container {
+   display: flex;
+   align-items: flex-start;
+   justify-items: center;
+   font-family: "Rubik", sans-serif;
+
+   .left_side {
+      gap: 20px;
+      width: 250px;
+      height: calc(100vh - 90px);
+      border-right: 1px solid black;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-direction: column;
+      padding: 10px;
+
+      p {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         gap: 10px;
+
+         img {
+            width: 30px;
+         }
+      }
+   }
+
+   .right_side {
+      width: calc(100% - 250px);
+      height: 100%;
+      padding: 20px;
+
+      overflow-y: scroll;
+      height: calc(100vh - 90px);
+
+      ul {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         flex-wrap: wrap !important;
+         gap: 40px;
+
+         .post {
+            width: 400px;
+            height: 420px;
+            cursor: pointer;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+
+            p {
+               padding: 10px;
+               position: absolute;
+               margin-top: 30px;
+               bottom: 0;
+               right: 0;
+               font-family: "Rubik", sans-serif;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               flex-direction: row-reverse;
+               gap: 10px;
+
+               img {
+                  width: 25px;
+                  height: 25px;
+                  border-radius: 0;
+               }
+            }
+
+            #where {
+               position: absolute;
+               margin-top: 30px;
+               flex-direction: row !important;
+               bottom: 0;
+               left: 0;
+               width: fit-content;
+               font-family: "Rubik", sans-serif;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               gap: 10px;
+
+               img {
+                  width: 25px;
+                  height: 25px;
+               }
+            }
+
+            h1 {
+               font-family: 'Righteous', cursive;
+               word-wrap: break-word;
+               white-space: pre-wrap;
+               word-break: break-word;
+               font-size: 1.5rem;
+            }
+
+            img {
+               width: 100%;
+               height: 300px;
+               object-fit: cover;
+               border-radius: 10px;
+            }
+         }
+      }
+
+   }
+}
+
+@media (max-width:1001px) {
+   .account_container {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .left_side {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         border-bottom: 1px solid black;
+         width: 100% !important;
+         height: fit-content;
+         border-right: 0;
+      }
+
+      .right_side {
+         overflow: hidden !important;
+         height: fit-content !important;
+      }
+   }
+}
+
+@media (max-width:680px) {
+   .right_side {
+      width: 100% !important;
+
+      .post {
+         width: 90% !important;
+      }
+   }
+}

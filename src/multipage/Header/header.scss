@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+header,
+#responsive_header {
+   background-color: #30a8f8;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 20px;
+
+   .logo {
+      a {
+         font-family: "Righteous", sans-serif;
+         color: white;
+         font-size: 2.5rem;
+         user-select: none;
+
+      }
+   }
+
+
+   a {
+      color: white;
+      text-decoration: none;
+      font-family: "Rubik", sans-serif;
+      padding: 0 20px;
+      font-size: 1.2rem;
+   }
+}
+
+#responsive_header {
+   flex-direction: column;
+   display: none;
+   position: absolute;
+   width: 100%;
+   top: 0;
+   height: 100%;
+   z-index: 100000;
+
+   nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 20px;
+   }
+}
+
+#menu {
+   filter: brightness(0) invert(1);
+   cursor: pointer;
+   display: none;
+}
+
+#close {
+   filter: brightness(0) invert(1);
+   cursor: pointer;
+}
+
+@media (max-width:1000px) {
+   header {
+      padding: 10px;
+
+      nav {
+         display: none;
+      }
+   }
+
+   #menu {
+      display: flex;
+   }
+}
+
+@media (max-width:450px) {
+   header {
+      .logo {
+         a {
+            font-size: 2rem;
+
+         }
+
+      }
+
+   }
+}
