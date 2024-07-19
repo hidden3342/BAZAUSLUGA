@@ -258,7 +258,7 @@ const Profile = () => {
                   className="post"
                   key={index}
                   onClick={() => {
-                    window.location.href = `/usluga/${element._id}`;
+                    window.location.href = `${config.backendUrl}usluga/${element._id}`;
                   }}
                 >
                   <IKImage
