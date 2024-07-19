@@ -42,13 +42,12 @@ const Post = () => {
   };
 
   const onError = (err) => {
-    console.log("Error", err);
+    console.error("GRESKA");
   };
 
   const onSuccess = (res) => {
     let ps = document.getElementById("ps");
-    console.log("Success", res); // Check the entire response object
-    console.log("Success URL", res.url); // Check specifically the URL
+
     setUrlI(res.filePath); // Ensure res.url is correctly set
 
     setTimeout(() => {
@@ -72,7 +71,6 @@ const Post = () => {
         setIsLoggedIn(decodedToken.isLoggedIn);
         setUsername(decodedToken.username);
       } catch (error) {
-        console.error("Invalid token:", error);
         setIsLoggedIn(false);
         setUsername("");
       }
@@ -117,10 +115,8 @@ const Post = () => {
       post_message.innerText = "Usluga se objavljuje";
       post_message.classList.add("s_m_p");
       ps.style.display = "none";
-      console.log("Attempting to post service with image URL:", urlI);
+
       try {
-        console.log("Attempting to post service with image URL 2:", urlI);
-        console.log("objavljujem:" + urlI);
         const response = await fetch(`${config.backendUrl}objavi`, {
           method: "POST",
           body: JSON.stringify({
@@ -140,21 +136,15 @@ const Post = () => {
 
         if (!response.ok) {
           const errorText = await response.text();
-          console.error(
-            `Network response was not ok: ${response.status} ${response.statusText} - ${errorText}`
-          );
-          throw new Error(
-            `Network response was not ok: ${response.status} ${response.statusText} - ${errorText}`
-          );
+          console.error(`("GRESKA");`);
+          throw new Error(`Network response was not ok:`);
         }
 
         const data = await response.json();
-        console.log("Service posted successfully:", data);
         post_message.innerText = "Usluga objavljena";
         post_message.classList.add("s_m_p");
         window.location.href = "/";
       } catch (error) {
-        console.error("There was a problem with the fetch operation:", error);
         post_message.innerText = "Došlo je do greške prilikom objave usluge.";
         post_message.classList.add("e_m_p");
       }

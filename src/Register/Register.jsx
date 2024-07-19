@@ -45,7 +45,6 @@ const Register = () => {
           }
         } else {
           const data = await response.json();
-          console.log(data);
           const token = data.token;
           localStorage.setItem("token", token);
           message.innerText = "Nalog uspješno napravljen";
@@ -56,7 +55,7 @@ const Register = () => {
           }, 4000);
         }
       } catch (error) {
-        console.error("There was a problem with the fetch operation:", error);
+        console.error("There was a problem");
       }
     }
   };

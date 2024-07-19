@@ -38,7 +38,7 @@ const App = () => {
           setHasMore(false);
         }
       } catch (error) {
-        console.error("There was a problem with the fetch operation:", error);
+        console.error("GRESKA");
       }
     };
     fetch_posts();
@@ -70,7 +70,6 @@ const App = () => {
   };
 
   const get_id = (id) => {
-    console.log(id);
     navigate(`/usluga/${id}`);
   };
 

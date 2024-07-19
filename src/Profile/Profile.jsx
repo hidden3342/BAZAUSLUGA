@@ -36,9 +36,8 @@ const Profile = () => {
       try {
         const decodedToken = jwtDecode(token);
         setUsername(decodedToken.username);
-        console.log(decodedToken.username); // Log the updated value
       } catch (error) {
-        console.error("Invalid token:", error);
+        console.error("GRESKA");
         setUsername("");
       }
     } else {
@@ -79,7 +78,6 @@ const Profile = () => {
         }
         const data = await response.json();
         setUser(data);
-        console.log(data);
 
         const fetchPosts = async () => {
           try {
@@ -90,16 +88,14 @@ const Profile = () => {
             const postsData = await response.json();
             const userPosts = postsData.filter((post) => post.by === username);
             setPosts(userPosts);
-            console.log(postsData);
-            console.log(posts);
           } catch (error) {
-            console.error("Error fetching posts:", error);
+            console.error("Error fetching posts");
           }
         };
         fetchPosts();
       } catch (error) {
         setError(error.message);
-        console.error("There was a problem with the fetch operation:", error);
+        console.error("There was a problem with the fetch");
       }
     };
     fetchUser();
@@ -142,7 +138,7 @@ const Profile = () => {
       setDeleteP(false);
       setPostToDelete(null);
     } catch (error) {
-      console.error("Error deleting post:", error);
+      console.error("Error deleting");
     }
   };
 
@@ -230,7 +226,7 @@ const Profile = () => {
         msg_edit.innerText = "Usluga uređena";
         msg_edit.classList.add("m_s");
       } catch (error) {
-        console.error("Error updating post:", error);
+        console.error("Error updating");
       }
     }
   };

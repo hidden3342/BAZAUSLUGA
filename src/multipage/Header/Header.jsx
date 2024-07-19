@@ -27,9 +27,7 @@ const Header = () => {
       try {
         const decodedToken = jwtDecode(token);
         setIsLoggedIn(decodedToken.isLoggedIn);
-        console.log(decodedToken.isLoggedIn); // Log the updated value
       } catch (error) {
-        console.error("Invalid token:", error);
         setIsLoggedIn(false);
       }
     } else {

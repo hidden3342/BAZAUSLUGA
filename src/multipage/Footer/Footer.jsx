@@ -17,7 +17,7 @@ const Footer = () => {
         const decoded = jwtDecode(token);
         setIsLoggedIn(true);
       } catch (error) {
-        console.error("Invalid token:", error);
+        console.error("GRESKA");
       }
     }
   }, []);
@@ -58,11 +58,11 @@ const Footer = () => {
           setMessage("");
           setEmail("");
         } else {
-          console.error("Error sending message:", response.status);
+          console.error("GRESKA");
         }
       }
     } catch (error) {
-      console.error("Error sending message:", error);
+      console.error("GRESKA");
     }
   };
 

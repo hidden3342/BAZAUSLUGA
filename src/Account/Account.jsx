@@ -26,7 +26,6 @@ const Account = () => {
         }
         const data = await response.json();
         setUser(data);
-        console.log(data);
 
         // fetch posts when user is found
         const fetchPosts = async () => {
@@ -39,13 +38,13 @@ const Account = () => {
             const userPosts = postsData.filter((post) => post.by === username);
             setPosts(userPosts);
           } catch (error) {
-            console.error("Error fetching posts:", error);
+            console.error("GRESKA");
           }
         };
         fetchPosts();
       } catch (error) {
         setError(error.message);
-        console.error("There was a problem with the fetch operation:", error);
+        console.error("GRESKA");
       }
     };
     fetchUser();

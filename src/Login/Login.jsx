@@ -34,7 +34,6 @@ const Login = () => {
       const data = await response.json();
       const token = data.token;
       localStorage.setItem("token", token);
-      console.log(data);
       if (response.ok) {
         log_msg.innerText = "Prijava uspješna";
         log_msg.classList.add("s_m");
@@ -50,7 +49,7 @@ const Login = () => {
     } catch (error) {
       log_msg.innerText = "Greška u serveru" + error;
       log_msg.classList.add("e_m");
-      console.error("There was a problem with the fetch operation:", error);
+      console.error("GRESKA");
     }
   };
 

@@ -22,13 +22,12 @@ const Service = () => {
         setService(data);
       } catch (error) {
         setError(error.message);
-        console.error("There was a problem with the fetch operation:", error);
+        console.error("There was a operation:");
       }
     };
     fetch_service();
   }, []);
   const get_username = (username) => {
-    console.log(username);
     navigate(`/korisnik/${username}`);
   };
   if (error) {
