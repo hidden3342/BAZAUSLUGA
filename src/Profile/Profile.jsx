@@ -258,7 +258,7 @@ const Profile = () => {
                   className="post"
                   key={index}
                   onClick={() => {
-                    window.location.href = `${config.backendUrl}usluga/${element._id}`;
+                    window.location.href = `https://bazausluga.onrender.com/usluga/${element._id}`;
                   }}
                 >
                   <IKImage
